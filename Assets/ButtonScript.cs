@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour
         
     }
     public void OnClickButton(){
-        Debug.Log("Button click");
+        Application.OpenURL("www.google.com");
     }
 
 }
