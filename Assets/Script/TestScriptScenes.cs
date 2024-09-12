@@ -26,7 +26,6 @@ public class TestScriptScenes : MonoBehaviour
                     SceneManager.LoadScene("Scene2");
                 }
             }
-
         }
     }
 }
