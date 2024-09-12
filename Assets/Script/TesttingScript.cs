@@ -5,27 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class TesttingScript : MonoBehaviour
 {
+    static WebCamTexture webCamTexture;
     private void Start() {
-        Invoke(nameof(ChangeScenes),3f);
+        webCamTexture = new WebCamTexture();
+        GetComponent<MeshRenderer>().material.mainTexture = webCamTexture;
+        webCamTexture.Play();
     }
-    private void ChangeScenes(){
-        SceneManager.LoadScene("Scene2");
-    }
-    // private void Update()
-    // {
-    //     Debug.Log("Update" + Time.deltaTime);
-    // }
-    // private void FixedUpdate()
-    // {
-    //     Debug.Log("Fixupdate" + Time.deltaTime);
-    // }
-    // private void OnEnable() {
-    //     Debug.Log("OnEnable");
-    //     Invoke(nameof(OnDisable),3f);
-    // }
-
-    // private void OnDisable() {
-    // Debug.Log("OnDisable");
-
-    // }
 }
