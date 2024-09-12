@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
+    public Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKey(KeyCode.UpArrow)){
-            transform.Translate(Vector3.up);
+            rigidbody.AddForce(Vector3.up,ForceMode.VelocityChange);
         }
         if(Input.GetKey(KeyCode.DownArrow)){
-            transform.Translate(Vector3.down);
+            rigidbody.AddForce(Vector3.down,ForceMode.VelocityChange);
+        }
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            rigidbody.AddForce(Vector3.left,ForceMode.VelocityChange);
+        }
+        if(Input.GetKey(KeyCode.RightArrow)){
+            rigidbody.AddForce(Vector3.right,ForceMode.VelocityChange);
         }
     }
 }
