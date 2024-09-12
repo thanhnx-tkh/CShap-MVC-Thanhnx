@@ -12,4 +12,13 @@ public class TesttingScript : MonoBehaviour
     {
         Debug.Log("Fixupdate" + Time.deltaTime);
     }
+    private void OnEnable() {
+        Debug.Log("OnEnable");
+        Invoke(nameof(OnDisable),3f);
+    }
+
+    private void OnDisable() {
+    Debug.Log("OnDisable");
+
+    }
 }
