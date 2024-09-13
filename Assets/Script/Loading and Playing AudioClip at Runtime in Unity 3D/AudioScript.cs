@@ -13,10 +13,9 @@ public class AudioScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = Resources.Load<AudioClip>("time_for_adventure");
         meshRenderer.material = Resources.Load<Material>("Earth Material");
-        Invoke("AudioFinish", audioSource.clip.length);
+        audioSource.PlayDelayed(2f);
     }
     private void AudioFinish(){
-        Debug.Log("Audio finish");
     }
 
     // Update is called once per frame
